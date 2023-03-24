@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+//struct History {
+//    let clockIn: String?
+//    let clockOut: String?
+//}
+//
+//[History]
+
 struct HistoryView: View {
     var body: some View {
         VStack (alignment: .leading){
-            
+            Text("\(UserDefaults.standard.string(forKey: "historyDate") ?? "Tidak ada")")
             //History Headline
             HStack {
                 NavigationLink(destination: ContentView()) {
@@ -68,7 +75,7 @@ struct HistoryView: View {
                             HStack {
                                 Text("Clock In: ")
                                     .font(.subheadline)
-                                Text("08.59 AM")
+                                Text("\(UserDefaults.standard.string(forKey: "historyDate") ?? "Tidak ada")")
                                     .font(.body)
                                     .bold()
                                     .foregroundColor(primBlue)
