@@ -8,6 +8,15 @@
 import SwiftUI
 import CoreLocation
 
+struct ContentView: View {
+    var body: some View {
+        
+        NavigationView(){
+            HomeView()
+        }
+    }
+}
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
     static let instance = ViewController() //Singleton
     
@@ -108,14 +117,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
 }
 
-struct ContentView: View {
-    var body: some View {
-        
-        NavigationView(){
-            HomeView()
-        }
-    }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
