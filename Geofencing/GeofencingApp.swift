@@ -11,26 +11,19 @@ import SwiftUI
 struct GeofencingApp: App {
     
     init() {
-        ViewController.instance.requestAuthorization()
+        //ViewController.instance.requestAuthorization()
+        let geofencingLocation = GeofencingLocation()
+        geofencingLocation.requestAuthorization()
+        
     }
     
     var body: some Scene {
+//        WindowGroup {
+//            MyViewControllerWrapper()
+//        }
         WindowGroup {
             ContentView()
+            
         }
-        WindowGroup {
-            MyViewControllerWrapper()
-        }
-    }
-}
-
-
-struct MyViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> ViewController {
-        return ViewController()
-    }
-    
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
-        // Update view controller if needed
     }
 }

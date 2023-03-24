@@ -15,6 +15,7 @@
 		A3A02A6D29CD78820012C17E /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6C29CD78820012C17E /* CustomAnimation.swift */; };
 		A3A02A7029CD78EC0012C17E /* Radar_Gray.json in Resources */ = {isa = PBXBuildFile; fileRef = A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */; };
 		A3A02A7129CD78EC0012C17E /* Radar_Blue.json in Resources */ = {isa = PBXBuildFile; fileRef = A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */; };
+		A3A02A7529CD8A7E0012C17E /* GeofencingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A7429CD8A7E0012C17E /* GeofencingLocation.swift */; };
 		B977A89B29C96F1C00EBBF36 /* GeofencingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977A89A29C96F1C00EBBF36 /* GeofencingApp.swift */; };
 		B977A89D29C96F1C00EBBF36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977A89C29C96F1C00EBBF36 /* ContentView.swift */; };
 		B977A89F29C96F1D00EBBF36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B977A89E29C96F1D00EBBF36 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		A3A02A6C29CD78820012C17E /* CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Radar_Gray.json; sourceTree = "<group>"; };
 		A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Radar_Blue.json; sourceTree = "<group>"; };
+		A3A02A7429CD8A7E0012C17E /* GeofencingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingLocation.swift; sourceTree = "<group>"; };
 		B94374B429CC433B002FD542 /* Geofencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Geofencing.entitlements; sourceTree = "<group>"; };
 		B977A89729C96F1C00EBBF36 /* Geofencing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geofencing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977A89A29C96F1C00EBBF36 /* GeofencingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingApp.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				A3A02A6C29CD78820012C17E /* CustomAnimation.swift */,
 				A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */,
 				A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */,
+				A3A02A7429CD8A7E0012C17E /* GeofencingLocation.swift */,
 			);
 			path = Geofencing;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3A02A6629CD76790012C17E /* LottiePlusView.swift in Sources */,
+				A3A02A7529CD8A7E0012C17E /* GeofencingLocation.swift in Sources */,
 				A3A02A6229CD76010012C17E /* HomeView.swift in Sources */,
 				A3A02A6429CD76290012C17E /* HistoryView.swift in Sources */,
 				B977A89D29C96F1C00EBBF36 /* ContentView.swift in Sources */,

@@ -103,6 +103,7 @@ struct HomeView: View {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text("Clock In: ")
+                                    
                                     Text("\(timeSt)")
                                         .fontWeight(.bold)
                                         .foregroundColor(primBlue)
