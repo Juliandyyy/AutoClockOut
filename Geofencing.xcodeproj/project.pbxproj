@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3A02A6229CD76010012C17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6129CD76010012C17E /* HomeView.swift */; };
+		A3A02A6429CD76290012C17E /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6329CD76290012C17E /* HistoryView.swift */; };
+		A3A02A6629CD76790012C17E /* LottiePlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6529CD76790012C17E /* LottiePlusView.swift */; };
+		A3A02A6929CD77380012C17E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A3A02A6829CD77380012C17E /* Lottie */; };
+		A3A02A6B29CD78420012C17E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6A29CD78420012C17E /* CustomColors.swift */; };
+		A3A02A6D29CD78820012C17E /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02A6C29CD78820012C17E /* CustomAnimation.swift */; };
+		A3A02A7029CD78EC0012C17E /* Radar_Gray.json in Resources */ = {isa = PBXBuildFile; fileRef = A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */; };
+		A3A02A7129CD78EC0012C17E /* Radar_Blue.json in Resources */ = {isa = PBXBuildFile; fileRef = A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */; };
 		B977A89B29C96F1C00EBBF36 /* GeofencingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977A89A29C96F1C00EBBF36 /* GeofencingApp.swift */; };
 		B977A89D29C96F1C00EBBF36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977A89C29C96F1C00EBBF36 /* ContentView.swift */; };
 		B977A89F29C96F1D00EBBF36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B977A89E29C96F1D00EBBF36 /* Assets.xcassets */; };
@@ -34,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3A02A6129CD76010012C17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A3A02A6329CD76290012C17E /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		A3A02A6529CD76790012C17E /* LottiePlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottiePlusView.swift; sourceTree = "<group>"; };
+		A3A02A6A29CD78420012C17E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		A3A02A6C29CD78820012C17E /* CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
+		A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Radar_Gray.json; sourceTree = "<group>"; };
+		A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Radar_Blue.json; sourceTree = "<group>"; };
 		B94374B429CC433B002FD542 /* Geofencing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Geofencing.entitlements; sourceTree = "<group>"; };
 		B977A89729C96F1C00EBBF36 /* Geofencing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geofencing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977A89A29C96F1C00EBBF36 /* GeofencingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingApp.swift; sourceTree = "<group>"; };
@@ -53,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A02A6929CD77380012C17E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +118,13 @@
 				B977A89C29C96F1C00EBBF36 /* ContentView.swift */,
 				B977A89E29C96F1D00EBBF36 /* Assets.xcassets */,
 				B977A8A029C96F1D00EBBF36 /* Preview Content */,
+				A3A02A6129CD76010012C17E /* HomeView.swift */,
+				A3A02A6329CD76290012C17E /* HistoryView.swift */,
+				A3A02A6529CD76790012C17E /* LottiePlusView.swift */,
+				A3A02A6A29CD78420012C17E /* CustomColors.swift */,
+				A3A02A6C29CD78820012C17E /* CustomAnimation.swift */,
+				A3A02A6F29CD78EC0012C17E /* Radar_Blue.json */,
+				A3A02A6E29CD78EC0012C17E /* Radar_Gray.json */,
 			);
 			path = Geofencing;
 			sourceTree = "<group>";
@@ -147,6 +170,9 @@
 			dependencies = (
 			);
 			name = Geofencing;
+			packageProductDependencies = (
+				A3A02A6829CD77380012C17E /* Lottie */,
+			);
 			productName = Geofencing;
 			productReference = B977A89729C96F1C00EBBF36 /* Geofencing.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +245,9 @@
 				Base,
 			);
 			mainGroup = B977A88E29C96F1C00EBBF36;
+			packageReferences = (
+				A3A02A6729CD77380012C17E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B977A89829C96F1C00EBBF36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +264,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A02A7129CD78EC0012C17E /* Radar_Blue.json in Resources */,
+				A3A02A7029CD78EC0012C17E /* Radar_Gray.json in Resources */,
 				B977A8A229C96F1D00EBBF36 /* Preview Assets.xcassets in Resources */,
 				B977A89F29C96F1D00EBBF36 /* Assets.xcassets in Resources */,
 			);
@@ -261,7 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A02A6629CD76790012C17E /* LottiePlusView.swift in Sources */,
+				A3A02A6229CD76010012C17E /* HomeView.swift in Sources */,
+				A3A02A6429CD76290012C17E /* HistoryView.swift in Sources */,
 				B977A89D29C96F1C00EBBF36 /* ContentView.swift in Sources */,
+				A3A02A6B29CD78420012C17E /* CustomColors.swift in Sources */,
+				A3A02A6D29CD78820012C17E /* CustomAnimation.swift in Sources */,
 				B977A89B29C96F1C00EBBF36 /* GeofencingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +629,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3A02A6729CD77380012C17E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3A02A6829CD77380012C17E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3A02A6729CD77380012C17E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B977A88F29C96F1C00EBBF36 /* Project object */;
 }
