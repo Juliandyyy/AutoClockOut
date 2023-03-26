@@ -10,11 +10,14 @@ import SwiftUI
 struct HomeView: View {
     @State private var play = true
     
+    //untuk buat jam
     var timeSt: String{
         let jam = DateFormatter()
         jam.dateFormat = "HH:mm"
         return jam.string(from: Date())
     }
+    
+    //untuk buat tanggal
     var dateSt: String{
         let tanggal = DateFormatter()
         tanggal.dateFormat = "EEEE, dd MMMM yyyy"
@@ -23,6 +26,7 @@ struct HomeView: View {
     
     var body: some View {
         
+        //untuk animasi loop
         ZStack {
             LottiePlusView(name: Constants.radarBlue,
                     loopMode: .loop,
@@ -89,7 +93,7 @@ struct HomeView: View {
                     Spacer()
                     
                     VStack(alignment: .leading){
-                        //atas
+                        //atas buat tanggal
                         HStack{
                             Text("\(dateSt)")
                                 .fontWeight(.semibold)
@@ -97,13 +101,12 @@ struct HomeView: View {
                         }
                         .padding(EdgeInsets(top: 8, leading: 32, bottom: -8, trailing: 16))
                         
-                        //bawah
+                        //bawah buat jam clock in clock out
                         HStack {
                             //Text Kiri
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text("Clock In: ")
-                                    
                                     Text("\(timeSt)")
                                         .fontWeight(.bold)
                                         .foregroundColor(primBlue)
@@ -121,10 +124,10 @@ struct HomeView: View {
                             
                             //Text Kanan
                             HStack {
-                                Text("On Time")
+                                Text("\(attendanceStatus())")
                                     .padding(8)
                                     .foregroundColor(.white)
-                                    .background(Color.green)
+                                    .background(attendanceStatusColor())
                                     .cornerRadius(12)
                                     .bold()
                             }
@@ -141,7 +144,41 @@ struct HomeView: View {
         }
         }
     }
-    
+
+    //buat status attendance
+    func attendanceStatus() -> String {
+        let currentTime = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: currentTime)
+        
+        
+        if hour > 7 && hour < 9 {
+            return "Ontime"
+        } else if hour > 9 {
+            return "Late"
+        } else if hour < 7 {
+            return "Invalid Hour"
+        }
+        return ""
+    }
+
+    //buat status attendance color
+    func attendanceStatusColor() -> Color {
+        let currentTime = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: currentTime)
+        
+        
+        if hour > 7 && hour < 9 {
+            return .green
+        } else if hour > 9 {
+            return .red
+        } else if hour < 7 {
+            return .yellow
+        }
+        return .white
+    }
+
     
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
