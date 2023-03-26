@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		750BD37429CDA1B300B58312 /* Xcode */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Xcode; path = ..; sourceTree = "<group>"; };
 		A3A02A6129CD76010012C17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A3A02A6329CD76290012C17E /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		A3A02A6529CD76790012C17E /* LottiePlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottiePlusView.swift; sourceTree = "<group>"; };
@@ -91,9 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750BD37329CDA1B300B58312 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				750BD37429CDA1B300B58312 /* Xcode */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		B977A88E29C96F1C00EBBF36 = {
 			isa = PBXGroup;
 			children = (
+				750BD37329CDA1B300B58312 /* Packages */,
 				B977A89929C96F1C00EBBF36 /* Geofencing */,
 				B977A8AA29C96F1D00EBBF36 /* GeofencingTests */,
 				B977A8B429C96F1D00EBBF36 /* GeofencingUITests */,
