@@ -153,16 +153,22 @@ struct HomeView: View {
         let currentTime = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: currentTime)
+        let minute = calendar.component(.minute, from: currentTime)
         
-        
-        if hour > 7 && hour < 9 {
-            return "Ontime"
-        } else if hour > 9 {
-            return "Late"
-        } else if hour < 7 {
-            return "Invalid Hour"
+        if UserDefaults.standard.string(forKey: "historyTCI") != nil {
+            if hour > 7 && (hour > 9 && minute <= 15 ) {
+                return "Ontime"
+            } else if (hour > 9 && minute > 15 ) {
+                return "Late"
+            } else if hour < 7 {
+                return "Invalid Hour"
+            }
+            return ""
         }
-        return ""
+        else {
+            return "N/A"
+        }
+        
     }
 
     //buat status attendance color
@@ -170,16 +176,21 @@ struct HomeView: View {
         let currentTime = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: currentTime)
+        let minute = calendar.component(.minute, from: currentTime)
         
-        
-        if hour > 7 && hour < 9 {
-            return .green
-        } else if hour > 9 {
-            return .red
-        } else if hour < 7 {
-            return .yellow
+        if UserDefaults.standard.string(forKey: "historyTCI") != nil {
+            if hour > 7 && (hour > 9 && minute <= 15 ) {
+                return .green
+            } else if (hour > 9 && minute > 15 ) {
+                return .red
+            } else if hour < 7 {
+                return .yellow
+            }
+            return .white
         }
-        return .white
+        else {
+            return primBlue
+        }
     }
 
     

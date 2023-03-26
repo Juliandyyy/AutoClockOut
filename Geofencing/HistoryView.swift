@@ -92,14 +92,18 @@ struct HistoryView: View {
                         Spacer()
                         
                         //Text Kanan
-                        Text("On Time")
+                        Text("\(attendanceStatus())")
                             .padding(8)
                             .foregroundColor(.white)
-                            .background(Color.green)
+                            .background(attendanceStatusColor())
                             .cornerRadius(12)
                             .bold()
                     }
-                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                    
+                }
+                .padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                
+                
                 
 //                Section("Wednesday, 15 March 2023") {
 //                    HStack {
