@@ -75,9 +75,12 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
                 let request = UNNotificationRequest(identifier: "ExitRegionNotification", content: content, trigger: trigger)
                 
                 UNUserNotificationCenter.current().add(request)
-            print("Stored Dateeeee: ", storedDate)
+            print("Stored Date Clock In: ", storedDate)
             
-            defaults.set("\(Date())", forKey: "historyDate")
+            let historyTimeCI = Date().formatted(date: .omitted, time: .shortened)
+            let historyDateCI = Date().formatted(date: .complete, time: .omitted)
+            defaults.set(historyTimeCI, forKey: "historyTCI")
+            defaults.set(historyDateCI, forKey: "historyDCI")
         }
     }
     
@@ -96,7 +99,13 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
                 let request = UNNotificationRequest(identifier: "ExitRegionNotification", content: content, trigger: trigger)
                 
                 UNUserNotificationCenter.current().add(request)
-            print("Stored Date: ", storedDate)
+            print("Stored Date Clock Out: ", storedDate)
+            
+            let historyTimeCO = Date().formatted(date: .omitted, time: .shortened)
+            let historyDateCO = Date().formatted(date: .complete, time: .omitted)
+            defaults.set(historyTimeCO, forKey: "historyTCO")
+            defaults.set(historyDateCO, forKey: "historyDCO")
+            
         }
     }
 }

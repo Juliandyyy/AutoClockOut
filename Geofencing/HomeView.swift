@@ -91,7 +91,7 @@ struct HomeView: View {
                     VStack(alignment: .leading){
                         //atas
                         HStack{
-                            Text("\(dateSt)")
+                            Text("\(Date().formatted(date: .complete, time: .omitted))")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 16))
                         }
@@ -104,15 +104,17 @@ struct HomeView: View {
                                 HStack {
                                     Text("Clock In: ")
                                     
-                                    Text("\(timeSt)")
+                                    Text("\(UserDefaults.standard.string(forKey: "historyTCI") ?? "-")")
                                         .fontWeight(.bold)
                                         .foregroundColor(primBlue)
                                 }
                                 .padding(.bottom, 0.25)
                                 HStack {
                                     Text("Clock Out: ")
-                                    Text("-")
-                                        .bold()
+                                        
+                                    Text("\(UserDefaults.standard.string(forKey: "historyTCO") ?? "-")")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(primBlue)
                                 }
                                 .padding(.bottom, 1.0)
                             }
@@ -122,6 +124,7 @@ struct HomeView: View {
                             //Text Kanan
                             HStack {
                                 Text("On Time")
+                                    .font(.footnote)
                                     .padding(8)
                                     .foregroundColor(.white)
                                     .background(Color.green)

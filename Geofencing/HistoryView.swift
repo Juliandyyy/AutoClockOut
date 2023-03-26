@@ -17,7 +17,6 @@ import SwiftUI
 struct HistoryView: View {
     var body: some View {
         VStack (alignment: .leading){
-            Text("\(UserDefaults.standard.string(forKey: "historyDate") ?? "Tidak ada")")
             //History Headline
             HStack {
                 NavigationLink(destination: ContentView()) {
@@ -69,13 +68,13 @@ struct HistoryView: View {
             
             //List Var
             List {
-                Section("Thursday, 16 March 2023") {
+                Section("\(UserDefaults.standard.string(forKey: "historyDCI") ?? "-")") {
                     HStack {
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("Clock In: ")
                                     .font(.subheadline)
-                                Text("\(UserDefaults.standard.string(forKey: "historyDate") ?? "Tidak ada")")
+                                Text("\(UserDefaults.standard.string(forKey: "historyTCI") ?? "-")")
                                     .font(.body)
                                     .bold()
                                     .foregroundColor(primBlue)
@@ -84,8 +83,9 @@ struct HistoryView: View {
                             HStack {
                                 Text("Clock Out: ")
                                     .font(.subheadline)
-                                Text("-")
+                                Text("\(UserDefaults.standard.string(forKey: "historyTCO") ?? "-")")
                                     .bold()
+                                    .foregroundColor(primBlue)
                             }
                             .padding(.bottom, 2.0)
                         }
@@ -101,92 +101,92 @@ struct HistoryView: View {
                     }
                 }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 
-                Section("Wednesday, 15 March 2023") {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("Clock In: ")
-                                Text("09.30 AM")
-                                    .bold()
-                                    .foregroundColor(primBlue)
-                            }
-                            .padding(.vertical, 2.0)
-                            HStack {
-                                Text("Clock Out: ")
-                                Text("-")
-                                    .bold()
-                            }
-                            .padding(.bottom, 2.0)
-                        }
-                        Spacer()
-                        
-                        //Text Kanan
-                        Text("Late")
-                            .padding(8)
-                            .foregroundColor(.white)
-                            .background(Color.red)
-                            .cornerRadius(12)
-                            .bold()
-                    }
-                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                
-                Section("Tuesday, 14 March 2023") {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("Clock In: ")
-                                Text("08.37 AM")
-                                    .bold()
-                                    .foregroundColor(primBlue)
-                            }
-                            .padding(.vertical, 2.0)
-                            HStack {
-                                Text("Clock Out: ")
-                                Text("-")
-                                    .bold()
-                            }
-                            .padding(.bottom, 2.0)
-                        }
-                        Spacer()
-                        
-                        //Text Kanan
-                        Text("On Time")
-                            .padding(8)
-                            .foregroundColor(.white)
-                            .background(Color.green)
-                            .cornerRadius(12)
-                            .bold()
-                    }
-                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                
-                Section("Monday, 13 March 2023") {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("Clock In: ")
-                                Text("08.14 AM")
-                                    .bold()
-                                    .foregroundColor(primBlue)
-                            }
-                            .padding(.vertical, 2.0)
-                            HStack {
-                                Text("Clock Out: ")
-                                Text("-")
-                                    .bold()
-                            }
-                            .padding(.bottom, 2.0)
-                        }
-                        Spacer()
-                        
-                        //Text Kanan
-                        Text("On Time")
-                            .padding(8)
-                            .foregroundColor(.white)
-                            .background(Color.green)
-                            .cornerRadius(12)
-                            .bold()
-                    }
-                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+//                Section("Wednesday, 15 March 2023") {
+//                    HStack {
+//                        VStack(alignment: .leading) {
+//                            HStack {
+//                                Text("Clock In: ")
+//                                Text("09.30 AM")
+//                                    .bold()
+//                                    .foregroundColor(primBlue)
+//                            }
+//                            .padding(.vertical, 2.0)
+//                            HStack {
+//                                Text("Clock Out: ")
+//                                Text("-")
+//                                    .bold()
+//                            }
+//                            .padding(.bottom, 2.0)
+//                        }
+//                        Spacer()
+//
+//                        //Text Kanan
+//                        Text("Late")
+//                            .padding(8)
+//                            .foregroundColor(.white)
+//                            .background(Color.red)
+//                            .cornerRadius(12)
+//                            .bold()
+//                    }
+//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+//
+//                Section("Tuesday, 14 March 2023") {
+//                    HStack {
+//                        VStack(alignment: .leading) {
+//                            HStack {
+//                                Text("Clock In: ")
+//                                Text("08.37 AM")
+//                                    .bold()
+//                                    .foregroundColor(primBlue)
+//                            }
+//                            .padding(.vertical, 2.0)
+//                            HStack {
+//                                Text("Clock Out: ")
+//                                Text("-")
+//                                    .bold()
+//                            }
+//                            .padding(.bottom, 2.0)
+//                        }
+//                        Spacer()
+//
+//                        //Text Kanan
+//                        Text("On Time")
+//                            .padding(8)
+//                            .foregroundColor(.white)
+//                            .background(Color.green)
+//                            .cornerRadius(12)
+//                            .bold()
+//                    }
+//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+//
+//                Section("Monday, 13 March 2023") {
+//                    HStack {
+//                        VStack(alignment: .leading) {
+//                            HStack {
+//                                Text("Clock In: ")
+//                                Text("08.14 AM")
+//                                    .bold()
+//                                    .foregroundColor(primBlue)
+//                            }
+//                            .padding(.vertical, 2.0)
+//                            HStack {
+//                                Text("Clock Out: ")
+//                                Text("-")
+//                                    .bold()
+//                            }
+//                            .padding(.bottom, 2.0)
+//                        }
+//                        Spacer()
+//
+//                        //Text Kanan
+//                        Text("On Time")
+//                            .padding(8)
+//                            .foregroundColor(.white)
+//                            .background(Color.green)
+//                            .cornerRadius(12)
+//                            .bold()
+//                    }
+//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             }
         }
         
