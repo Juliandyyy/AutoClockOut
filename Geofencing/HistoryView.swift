@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
+import Foundation
 
-//struct History {
-//    let clockIn: String?
-//    let clockOut: String?
-//}
-//
-//[History]
+
 
 struct HistoryView: View {
+    
     var body: some View {
         VStack (alignment: .leading){
             //History Headline
@@ -27,7 +24,6 @@ struct HistoryView: View {
                 Text("History")
                     .font(.title)
                     .fontWeight(.semibold)
-                
 //                        .font(.system(size: 24))
                 
             }
@@ -57,143 +53,70 @@ struct HistoryView: View {
                     .cornerRadius(8)
                     .font(.system(size: 16))
                 
-                Text("April")
-                    .padding(10)
-                    .foregroundColor(.white)
-                    .background(terColor2)
-                    .cornerRadius(8)
-                    .font(.system(size: 16))
+//                Text("April")
+//                    .padding(10)
+//                    .foregroundColor(.white)
+//                    .background(terColor2)
+//                    .cornerRadius(8)
+//                    .font(.system(size: 16))
             }
-            .padding(EdgeInsets(top: 5, leading: 24, bottom: 15, trailing: 16))
+            .padding(EdgeInsets(top: 5, leading: 24, bottom: 8, trailing: 16))
             
-            //List Var
-            List {
-                Section("\(UserDefaults.standard.string(forKey: "historyDCI") ?? "-")") {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("Clock In: ")
-                                    .font(.subheadline)
-                                Text("\(UserDefaults.standard.string(forKey: "historyTCI") ?? "-")")
-                                    .font(.body)
-                                    .bold()
-                                    .foregroundColor(primBlue)
+                Spacer()
+//            List Var
+            List { 
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("\(UserDefaults.standard.string(forKey: "historyDCI") ?? "-")")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .padding(.bottom, -2.0)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("Clock In: ")
+                                        .font(.subheadline)
+                                    Text("\(UserDefaults.standard.string(forKey: "historyTCI") ?? "-")")
+                                        .font(.body)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(primBlue)
+                                }
+                                .padding(.vertical, 2.0)
+                                HStack {
+                                    Text("Clock Out: ")
+                                        .font(.subheadline)
+                                    Text("\(UserDefaults.standard.string(forKey: "historyTCO") ?? "-")")
+                                        .font(.body)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(primBlue)
+                                }
+                                .padding(.bottom, 2.0)
                             }
-                            .padding(.vertical, 2.0)
-                            HStack {
-                                Text("Clock Out: ")
-                                    .font(.subheadline)
-                                Text("\(UserDefaults.standard.string(forKey: "historyTCO") ?? "-")")
-                                    .bold()
-                                    .foregroundColor(primBlue)
-                            }
-                            .padding(.bottom, 2.0)
+                            Spacer()
+
+                            //Text Kanan
+                            Text("\(attendanceStatus())")
+                                .padding(8)
+                                .foregroundColor(.white)
+                                .background(attendanceStatusColor())
+                                .cornerRadius(12)
+                                .bold()
                         }
-                        Spacer()
-                        
-                        //Text Kanan
-                        Text("\(attendanceStatus())")
-                            .padding(8)
-                            .foregroundColor(.white)
-                            .background(attendanceStatusColor())
-                            .cornerRadius(12)
-                            .bold()
+                        .padding(.all)
+                        .background(.white)
+                        .cornerRadius(16)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                            .stroke(primBlue, lineWidth: 2))
                     }
-                    
+
                 }
-                .padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                .listSectionSeparator(.hidden)
                 
-                
-                
-//                Section("Wednesday, 15 March 2023") {
-//                    HStack {
-//                        VStack(alignment: .leading) {
-//                            HStack {
-//                                Text("Clock In: ")
-//                                Text("09.30 AM")
-//                                    .bold()
-//                                    .foregroundColor(primBlue)
-//                            }
-//                            .padding(.vertical, 2.0)
-//                            HStack {
-//                                Text("Clock Out: ")
-//                                Text("-")
-//                                    .bold()
-//                            }
-//                            .padding(.bottom, 2.0)
-//                        }
-//                        Spacer()
-//
-//                        //Text Kanan
-//                        Text("Late")
-//                            .padding(8)
-//                            .foregroundColor(.white)
-//                            .background(Color.red)
-//                            .cornerRadius(12)
-//                            .bold()
-//                    }
-//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-//
-//                Section("Tuesday, 14 March 2023") {
-//                    HStack {
-//                        VStack(alignment: .leading) {
-//                            HStack {
-//                                Text("Clock In: ")
-//                                Text("08.37 AM")
-//                                    .bold()
-//                                    .foregroundColor(primBlue)
-//                            }
-//                            .padding(.vertical, 2.0)
-//                            HStack {
-//                                Text("Clock Out: ")
-//                                Text("-")
-//                                    .bold()
-//                            }
-//                            .padding(.bottom, 2.0)
-//                        }
-//                        Spacer()
-//
-//                        //Text Kanan
-//                        Text("On Time")
-//                            .padding(8)
-//                            .foregroundColor(.white)
-//                            .background(Color.green)
-//                            .cornerRadius(12)
-//                            .bold()
-//                    }
-//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-//
-//                Section("Monday, 13 March 2023") {
-//                    HStack {
-//                        VStack(alignment: .leading) {
-//                            HStack {
-//                                Text("Clock In: ")
-//                                Text("08.14 AM")
-//                                    .bold()
-//                                    .foregroundColor(primBlue)
-//                            }
-//                            .padding(.vertical, 2.0)
-//                            HStack {
-//                                Text("Clock Out: ")
-//                                Text("-")
-//                                    .bold()
-//                            }
-//                            .padding(.bottom, 2.0)
-//                        }
-//                        Spacer()
-//
-//                        //Text Kanan
-//                        Text("On Time")
-//                            .padding(8)
-//                            .foregroundColor(.white)
-//                            .background(Color.green)
-//                            .cornerRadius(12)
-//                            .bold()
-//                    }
-//                }.padding(10).listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-            }
+           }
+           .padding(.horizontal, 4.0)
+           .listStyle(.plain)
         }
-        
     }
 }
 

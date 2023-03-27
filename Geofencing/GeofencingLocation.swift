@@ -64,6 +64,11 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
         print("You are in", region.identifier)
         let defaults = UserDefaults.standard
         defaults.set(Date(), forKey: "currentDate")
+        
+        let historyTimeCI = Date().formatted(date: .omitted, time: .shortened)
+        let historyDateCI = Date().formatted(date: .complete, time: .omitted)
+        defaults.set(historyTimeCI, forKey: "historyTCI")
+        defaults.set(historyDateCI, forKey: "historyDCI")
 
         if let storedDate = defaults.object(forKey: "currentDate") as? Date {
             let content = UNMutableNotificationContent()
@@ -72,15 +77,10 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
                 content.sound = .default
                 
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-                let request = UNNotificationRequest(identifier: "ExitRegionNotification", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "EnterRegionNotification", content: content, trigger: trigger)
                 
                 UNUserNotificationCenter.current().add(request)
             print("Stored Date Clock In: ", storedDate)
-            
-            let historyTimeCI = Date().formatted(date: .omitted, time: .shortened)
-            let historyDateCI = Date().formatted(date: .complete, time: .omitted)
-            defaults.set(historyTimeCI, forKey: "historyTCI")
-            defaults.set(historyDateCI, forKey: "historyDCI")
         }
     }
     
@@ -88,6 +88,11 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
         print("You are out from", region.identifier)
         let defaults = UserDefaults.standard
         defaults.set(Date(), forKey: "currentDate")
+        
+        let historyTimeCO = Date().formatted(date: .omitted, time: .shortened)
+        let historyDateCO = Date().formatted(date: .complete, time: .omitted)
+        defaults.set(historyTimeCO, forKey: "historyTCO")
+        defaults.set(historyDateCO, forKey: "historyDCO")
 
         if let storedDate = defaults.object(forKey: "currentDate") as? Date {
             let content = UNMutableNotificationContent()
@@ -100,12 +105,6 @@ class GeofencingLocation: NSObject, CLLocationManagerDelegate {
                 
                 UNUserNotificationCenter.current().add(request)
             print("Stored Date Clock Out: ", storedDate)
-            
-            let historyTimeCO = Date().formatted(date: .omitted, time: .shortened)
-            let historyDateCO = Date().formatted(date: .complete, time: .omitted)
-            defaults.set(historyTimeCO, forKey: "historyTCO")
-            defaults.set(historyDateCO, forKey: "historyDCO")
-            
         }
     }
 }

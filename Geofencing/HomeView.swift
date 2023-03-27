@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
     @State private var play = true
     
@@ -156,11 +158,11 @@ struct HomeView: View {
         let minute = calendar.component(.minute, from: currentTime)
         
         if UserDefaults.standard.string(forKey: "historyTCI") != nil {
-            if hour > 7 && (hour > 9 && minute <= 15 ) {
+            if (hour > 7 && hour <= 9) && (minute > 0 && minute <= 15)  {
                 return "Ontime"
             } else if (hour > 9 && minute > 15 ) {
                 return "Late"
-            } else if hour < 7 {
+            } else if hour < 7 || hour > 19 {
                 return "Invalid Hour"
             }
             return ""
@@ -179,11 +181,11 @@ struct HomeView: View {
         let minute = calendar.component(.minute, from: currentTime)
         
         if UserDefaults.standard.string(forKey: "historyTCI") != nil {
-            if hour > 7 && (hour > 9 && minute <= 15 ) {
+            if (hour > 7 && hour <= 9) && (minute > 0 && minute <= 15) {
                 return .green
             } else if (hour > 9 && minute > 15 ) {
                 return .red
-            } else if hour < 7 {
+            } else if hour < 7 || hour > 19 {
                 return .yellow
             }
             return .white
@@ -199,3 +201,4 @@ struct HomeView: View {
             HomeView()
         }
     }
+
